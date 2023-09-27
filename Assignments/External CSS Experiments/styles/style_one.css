@@ -1,0 +1,20 @@
+h1 {
+	width: 300px;
+	font-size: 30px;
+	background-color: #b8bfcc;
+	color: #465461;
+}
+
+h2 {
+	width: 300px;
+	font-size: 20px;
+	background-color: #a9c6f5;
+	color: #3f4a5c;
+}
+
+p {
+	width: 500px;
+	font-size: 15px;
+	background-color: #dae4ed;
+	color: #16181a;
+}
