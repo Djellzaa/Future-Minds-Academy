@@ -1,0 +1,17 @@
+.paragraph {
+    font-size: 16px;
+    background-color: rgb(244, 223, 247);
+    padding: 10px;
+
+}
+
+.paragraph:hover::first-letter {
+
+    font-size: 35px;
+    color: rgb(226, 121, 242);
+}
+
+.paragraph:hover {
+    background-color: rgb(110, 80, 115);
+    color: rgb(255, 255, 255);
+}

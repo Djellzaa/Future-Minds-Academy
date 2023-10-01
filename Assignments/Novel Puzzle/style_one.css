@@ -1,0 +1,26 @@
+p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    width: 500px;
+    line-height: 1.0;
+}
+
+.letter {
+
+
+    font-size: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    text-decoration: underline red;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+}
+
+.word {
+
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    text-transform: uppercase;
+    font-weight: bold;
+
+}

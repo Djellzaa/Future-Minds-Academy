@@ -1,0 +1,42 @@
+table {
+    border-collapse: collapse;
+    margin: 20px;
+    width: 50%;
+    font-size: 30px;
+
+}
+
+caption {
+    margin: 20px;
+    font-size: 30px;
+    color: black;
+}
+
+tr {
+    border-bottom: 1px solid white;
+    color: white;
+
+}
+
+th {
+
+    padding: 8px;
+    text-align: left;
+    color: black;
+}
+
+td {
+    padding: 8px;
+    text-align: left;
+
+}
+
+tr:nth-child(odd) {
+    background-color: #4fe649;
+
+}
+
+tr:nth-child(even) {
+    background-color: #305c2f;
+
+}
