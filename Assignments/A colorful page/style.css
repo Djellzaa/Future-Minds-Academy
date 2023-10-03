@@ -5,7 +5,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: Calibri, sans-serif;
+
 }
 
 header {
@@ -15,13 +15,14 @@ header {
   margin: 0;
   text-align: center;
   background-image: linear-gradient(to left, rgb(128, 177, 182), rgb(18, 42, 44));
+
 }
 
 nav ul {
 
   list-style: none;
-  display: flex;
   padding: 0;
+  opacity: 0.3;
 }
 
 li {
@@ -30,11 +31,12 @@ li {
   margin-left: 20px;
   margin: 0 10px;
 
+
 }
 
 nav a {
 
-  display: inline-block;
+  display: inline;
   padding: 10px 10px;
   background-color: rgb(211, 231, 240);
   color: rgb(6, 24, 31);
@@ -70,7 +72,7 @@ h1 {
 }
 
 p {
-  background-color: rgb(169, 196, 245);
+  background-image: linear-gradient(to left, rgb(18, 42, 44), rgb(169, 196, 245));
   margin: 20px;
   padding: 20px;
   width: 90%;
@@ -98,7 +100,7 @@ h2 {
 
 footer {
   width: 100%;
-  font-size: 15px;
+  font-size: 25px;
   text-align: center;
   background-image: linear-gradient(to left, rgb(128, 177, 182), rgb(18, 42, 44));
   padding: 15px;
