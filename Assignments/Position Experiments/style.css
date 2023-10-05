@@ -25,10 +25,17 @@ body {
 
 .x-icon {
     position: absolute;
-    top: -10px;
-    right: -10px;
-    width: 25px;
-
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.5em;
+    text-align: center;
 }
 
 video {
@@ -61,7 +68,6 @@ video:hover {
 }
 
 .video-text {
-
     position: fixed;
     bottom: 10px;
     right: 40px;
