@@ -1,0 +1,180 @@
+body {
+
+  margin: 1em 10% 0 10%;
+  background-image: url('images/background-img.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.2em;
+
+}
+
+h1 {
+  text-align: center;
+}
+
+nav ul {
+
+  list-style: none;
+  text-align: center;
+  padding: 0;
+
+}
+
+nav li {
+
+  display: inline;
+  margin-left: 20px;
+  margin: 0 10px;
+
+}
+
+nav a {
+
+  display: inline;
+  padding: 10px 10px;
+  background-color: rgb(172, 150, 170);
+  color: rgb(6, 24, 31);
+  border-radius: 5px;
+  text-decoration: none;
+
+}
+
+nav a:hover {
+  background-color: rgb(241, 189, 233);
+
+}
+
+.subheading {
+  text-align: center;
+  font-size: 2em;
+}
+
+p {
+  text-align: center;
+  text-align: justify;
+  line-height: 1.8;
+
+}
+
+.main-content {
+  text-align: center;
+  background-color: rgb(214, 185, 208);
+  border: none;
+  border-radius: 15px;
+}
+
+.main-content:hover {
+  text-align: center;
+  background-color: rgb(238, 219, 235);
+  border: solid 1px rgb(24, 2, 24);
+  border-radius: 15px;
+}
+
+img {
+  float: left;
+  width: 25%;
+}
+
+.education {
+
+  background-color: rgb(214, 185, 208);
+  border: transparent;
+  border-radius: 15px;
+
+}
+
+.education:hover {
+
+  background-color: rgb(238, 219, 235);
+  border: solid 1px rgb(24, 2, 24);
+  border-radius: 15px;
+}
+
+.school {
+  background-color: rgb(141, 92, 129);
+  border: transparent;
+  border-radius: 10px;
+  margin: 10px 10px;
+}
+
+.skills {
+
+  background-color: rgb(214, 185, 208);
+  border: transparent;
+  border-radius: 15px;
+  
+
+}
+
+.skills:hover {
+
+  background-color: rgb(238, 219, 235);
+  border: solid 1px rgb(24, 2, 24);
+  border-radius: 15px;
+ 
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+  margin: 20px 20px;
+
+}
+
+th, td {
+  border: 1px solid rgb(49, 2, 30);
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: rgb(77, 5, 61);
+  color: white;
+}
+
+.experience {
+
+  background-color: rgb(214, 185, 208);
+  border: none;
+  border-radius: 15px;
+}
+
+.experience:hover {
+
+  background-color: rgb(238, 219, 235);
+  border:  1px solid rgb(24, 2, 24);
+  border-radius: 15px;
+}
+
+.projects {
+
+  background-color: rgb(214, 185, 208);
+  border: none;
+  border-radius: 15px;
+}
+
+.projects:hover {
+  background-color: rgb(238, 219, 235);
+  border: solid 1px rgb(24, 2, 24);
+  border-radius: 15px;
+}
+
+.btn {
+  background-color: rgb(80, 5, 55);
+  color: rgb(14, 0, 12);
+  border: solid 1px;
+  padding: 5px 10px;
+  font-size: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+footer p {
+  background-color: rgb(126, 52, 120);
+  color: rgb(236, 225, 236);
+  padding: 5px;
+  opacity: 0.5;
+  text-align: center;
+}
+
