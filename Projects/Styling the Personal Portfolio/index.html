@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="description" content="Your description here">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
     <link rel="stylesheet" href="style.css">
 
     <title>Personal Portfolio - Djellza Hajrullahu</title>
@@ -12,8 +16,8 @@
 
 <body>
     <header>
+        <h1 class="important">Personal Portfolio &#127891;</h1>
         <hr>
-        <h1>Personal Portfolio &#127891;</h1>
         <nav>
             <ul>
                 <li><a href="projects.html">My Projects &#128193;</a></li>
@@ -23,27 +27,25 @@
         <hr>
     </header>
     <main>
-        <section class="main-content">
-            <h2 class="subheading">About me</h2>
-
-            <p><img src="images/avatar.png" alt="Avatar of Djellza Hajrullahu">I am a final year student majoring in Computer
-                Science at<strong>"Kadri Zeka" University</strong> in
-                Gjilan.<br>
-                Previously I have completed my studies at the University of Prishtina majoring in Agroculture, but the
-                field of
-                technology has always attracted me more. <br>In this field, I have achieved significant knowledge in
-                programming languages such as <strong>C#, PHP, HTML, CSS, and JavaScript, as well as in SQL and
-                    MySQL.</strong><br>
-                My journey from Agroculture to Computer Science has been both challenging and rewarding, and it has
-                equipped me with a unique perspective and skill set.<br>
-                I invite you to explore my portfolio to see some of the projects that showcase my passion and dedication
-                to the field of technology..
-            </p>
+        <section class="content">
+            <h2>Djellza Hajrullahu</h2>
+            <section class="info">
+                <img src="images/avatar.png" alt="Avatar of Djellza Hajrullahu">
+                <p>I am a final year student majoring in Computer Science at<strong>"Kadri Zeka" University</strong> in
+                    Gjilan. Previously I have completed my studies at the University of Prishtina majoring in Agroculture, but
+                    the field of technology has always attracted me more.In this field, I have achieved significant knowledge in
+                    programming languages such as <strong>C#, PHP, HTML, CSS, and JavaScript, as well as in SQL and MySQL.</strong>
+                    My journey from Agroculture to Computer Science has been both challenging and rewarding, and it has
+                    equipped me with a unique perspective and skill set.
+                    I invite you to explore my portfolio to see some of the projects that showcase my passion and
+                    dedication to the field of technology...
+                </p>
+            </section>
         </section>
-        <hr>
-        <section class="education">
-            <h2 class="subheading">Education</h2>
-            <article class="school">
+        <br>
+        <section class="content">
+            <h2>Education</h2>
+            <section class="education">
                 <ul>
                     <li>Primary School
                         <ul>
@@ -51,9 +53,9 @@
                         </ul>
                     </li>
                 </ul>
-            </article>
+            </section>
             <br>
-            <article class="school">
+            <section class="education">
                 <ul>
                     <li>High School
                         <ul>
@@ -61,9 +63,9 @@
                         </ul>
                     </li>
                 </ul>
-            </article>
+            </section>
             <br>
-            <article class="school">
+            <section class="education">
                 <ul>
                     <li>University
                         <ul>
@@ -72,12 +74,11 @@
                         </ul>
                     </li>
                 </ul>
-            </article>
-            <br>
+            </section>
         </section>
-        <hr>
-        <section class="skills">
-            <h2 class="subheading">My Skills </h2>
+        <br>
+        <section class="content">
+            <h2>My Skills </h2>
             <table>
                 <tr>
                     <th>#</th>
@@ -98,35 +99,34 @@
                     <td>3.3</td>
                 </tr>
             </table>
+        </section><br>
+        <section class="content">
+            <h2>Courses and Training</h2>
+            <section class="experience">
+                <ol>
+                    <li>Future Minds Academy (FrontEnd)</li>
+                    <li>American Chamber Kosovo( Enahncing Women Employment)</li>
+                    <li>PBC Academy (C#, Html, CSS, JavaScript) </li>
+                </ol>
+            </section>
+
         </section>
-        <hr>
-        <section class="experience">
-            <h2 class="subheading">Courses and Training</h2>
-            <ol>
-                <li>Future Minds Academy (FrontEnd)</li>
-                <li>American Chamber Kosovo( Enahncing Women Employment)</li>
-                <li>PBC Academy (C#, Html, CSS, JavaScript) </li>
-            </ol>
-        </section>
-        <hr>
-        <section class="projects">
-            <h2 class="subheading" id="a1">My projects </h2>
-            <ul>
-                <li>Dafi's Cake Project &#127856;
-                    <button class="btn"><a href="projects.html#p1">-></a></button>
-                </li>
-                <li>Generating reports and integrating data into the "LO" database &#128218;
-                    <button class="btn"><a href="projects.html#p2"></a></button>
-                </li>
-                <li>Web application for Managing Data about Countries &#127758;
-                    <button class="btn"><a href="projects.html#p3"></a></button>
-                </li>
-            </ul>
+        <br>
+        <section class="content">
+            <h2 id="a1">My projects </h2>
+            <section class="projects">
+                <ul>
+                    <li>Dafi's Cake Project<a href="projects.html#p1">→</a></li>
+                    <li>Generating reports and integrating data into the "LO" Database<a href="projects.html#p2">→</a>
+                    </li>
+                    <li>Web application for Managing Data about Countries<a href="projects.html#p3">→</a></li>
+                </ul>
+            </section>
         </section>
     </main>
-    <hr>
+    <br>
     <footer>
-        <p>&copy; 2023 Djellza Hajrullahu</p>
+        <p>All right reserved &copy; Djellza Hajrullahu</p>
     </footer>
 </body>
 
