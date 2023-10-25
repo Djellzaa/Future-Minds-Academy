@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 20%;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: right;
+    background-color: rgb(10, 37, 71);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+.aside-title {
+    text-transform: uppercase;
+    font-size: 2em;
+    box-sizing: border-box;
+}
+
+.aside-text {
+    font-size: 1.2em;
+    color: rgb(129, 173, 173);
+}
+
+.login {
+    width: 60px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid rgb(167, 206, 212);
+    font-size: 1em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.main-content {
+    flex: 1;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.blog-post {
+    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 1em;
+    position: relative;
+    color: rgb(168, 169, 170);
+    font-weight: bold;
+}
+
+.author-name {
+    color: blue;
+}
+
+.pinned-post {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    color: rgba(119, 119, 119, 0.678);
+}
+
+.author-image img {
+    border-radius: 50%;
+}
+
+.css-course a,
+.html-course a,
+.js-course a {
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: white;
+    font-size: 0.5em;
+}
+
+.html-course a {
+    background-color: rgb(83, 59, 189);
+}
+
+.css-course a {
+    background-color: rgb(77, 231, 63);
+}
+
+.js-course a {
+    background-color: rgb(180, 19, 127);
+}
+
+.recent-post {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    color: rgba(119, 119, 119, 0.678);
+}
+
+.author-image img,
+.recent-image img {
+    width: 60px;
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+    right: 30px;
+}
+
+hr {
+    color: #a8a6a679;
+}
