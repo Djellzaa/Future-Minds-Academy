@@ -1,0 +1,80 @@
+body {
+    margin: 0px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid rgba(0, 0, 0, 0);
+    
+}
+
+.card-details {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgba(0, 0, 0, 0.822);
+
+}
+
+.temperature {
+    text-align: center;
+    width: 50%;
+    padding:20px;
+    font-size: 2em;
+    font-family: fantasy;
+    font-weight: bold;
+    border: 1px solid black;
+
+}
+
+.card-data {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    border: 2px solid black;
+
+}
+
+.card-day {
+    font-size: 2em;
+    font-weight: bold;
+    font-family: fantasy;
+
+}
+
+.card-month,
+.card-info {
+    font-size: 1em;
+    font-weight: lighter;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.card-content {
+    border: 2px solid black;
+    position: relative;
+
+}
+
+.card-image {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.card-text {
+    width: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    margin: 5px;
+    font-size: 0.8em;
+    font-family: fantasy;
+    color: white;
+}
