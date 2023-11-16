@@ -9,7 +9,7 @@
       <title>CP CoolPage</title>
    </head>
    <body>
-      <nav>
+
          <aside>
             <div>
                <div class="page-title">CP COOL PAGE</div>
@@ -57,19 +57,24 @@
                <span class="material-icons expand-more">expand_more</span>
             </div>
          </aside>
-      </nav>
       <div class="container">
       <header>
          <div class="header-content">
-         <div class="dashboard-icon">
-            <span class="material-icons" title="See More">more_vert</span>
-            <span>Dashboard</span>
-         </div>
+               <div class="dash-menu">
+                  <div class="left">Dashboard</div>
+               </div>
+               <div class="hamburger">
+                  <span class="material-icons " title=Menu>menu</span>
+               </div>
+            <div class="dashboard-icon">
+              <span class="material-icons" title="See More">more_vert</span>
+              <span>Dashboard</span>
+            </div>
          <div class="header-content">
-         <div class="search-container">
+          <div class="search-container">
             <input type="text" placeholder="Search" class="search-input" />
             <div class="search-icon-container">
-               <span class="material-icons search-icon" title="Search">search</span>
+              <span class="material-icons search-icon" title="Search">search</span>
             </div>
             <div class="header-icons">
                <span class="material-icons" title="Dashboard">dashboard</span>
@@ -101,42 +106,42 @@
                <div class="table-container">
                   <table>
                      <tr>
-                        <td><img src="images/usa.png" alt="Usa Flag"> USA</td>
+                        <td class="state-name"><img src="images/usa.png"class="flag" alt="Usa Flag"> USA</td>
                         <td>2920</td>
                         <td>53.25%</td>
                      </tr>
                      <tr>
-                        <td>
-                           <img src="images/germany.png" alt="Germany Flag"> Germany
+                        <td class="state-name">
+                           <img src="images/germany.png" class="flag" alt="Germany Flag"> Germany
                         </td>
                         <td>1300</td>
                         <td>4.34%</td>
                      </tr>
                      <tr>
-                        <td>
-                           <img src="images/australia.png" alt="Australia Flag">
+                        <td class="state-name">
+                           <img src="images/australia.png" class="flag"  alt="Australia Flag">
                            Australia
                         </td>
                         <td>760</td>
                         <td>23.49%</td>
                      </tr>
                      <tr>
-                        <td>
-                           <img src="images/uk.png" alt="UK Flag"> UnitedKingdom
+                        <td class="state-name">
+                           <img src="images/uk.png" class="flag" alt="UK Flag"> UnitedKingdom
                         </td>
                         <td>690</td>
                         <td>13.35%</td>
                      </tr>
                      <tr>
-                        <td>
-                           <img src="images/romania.png" alt="Romania Flag"> Romania
+                        <td class="state-name">
+                           <img src="images/romania.png"class="flag"  alt="Romania Flag"> Romania
                         </td>
                         <td>600</td>
-                        <td>7.89%</td>
+                        <td >7.89%</td>
                      </tr>
                      <tr>
-                        <td>
-                           <img src="images/brasil.png" alt="Brasil Flag"> Brasil
+                        <td class="state-name">
+                           <img src="images/brasil.png"  class="flag" alt="Brasil Flag"> Brasil
                         </td>
                         <td>550</td>
                         <td>5.94%</td>
@@ -146,7 +151,7 @@
                <div class="map-container">
                   <iframe
                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1699646612882!5m2!1sen!2s"
-                     width="600" height="450" style="border: 0" allowfullscreen loading="lazy"
+                      allowfullscreen loading="lazy"
                      referrerpolicy="no-referrer-when-downgrade"></iframe>
                </div>
             </div>
@@ -213,14 +218,19 @@
                </div>
             </div>
          </div>
+         <span class="listing"><p>Manage Listing</p></span>
          <div class="cards">
             <div class="card-wraper">
                <div class="card">
-                  <img src="images/card-1.jpeg" alt="Image">
-                  <div class="card-icons">
-                     <span class="material-icons bid_landscape" title="View">bid_landscape</span>
-                     <span class="material-icons delete" title="Delete">close</span>
-                     <span class="material-icons edit" title="Edit">edit</span>
+                  <div class="card-hovered">
+                     <div class="img-hover">
+                        <img src="images/card-1.jpeg" alt="Image">
+                     </div>
+                     <div class="card-icons">
+                        <span class="material-icons burst_mode" title="View">burst_mode</span>
+                        <span class="material-icons edit" title="Edit">edit</span>
+                        <span class="material-icons delete" title="Delete">close</span>
+                     </div>
                   </div>
                   <div class="card-paragraf">
                         <h2>Cozy 5 Stars Apartment</h2>
@@ -244,11 +254,15 @@
             </div>
             <div class="card-wraper">
                <div class="card">
-                  <img src="images/card-2.jpeg" alt="Image">
-                  <div class="card-icons">
-                     <span class="material-icons bid_landscape" title="View">bid_landscape</span>
-                     <span class="material-icons delete" title="Delete">close</span>
-                     <span class="material-icons edit" title="Edit">edit</span>
+                  <div class="card-hovered">
+                     <div class="img-hover">
+                        <img src="images/card-2.jpeg" alt="Image">
+                     </div>
+                     <div class="card-icons">
+                        <span class="material-icons burst_mode" title="View">burst_mode</span>
+                        <span class="material-icons edit" title="Edit">edit</span>
+                        <span class="material-icons delete" title="Delete">close</span>
+                     </div>
                   </div>
                   <div class="card-paragraf">
                         <h2>Office Studio</h2>
@@ -272,12 +286,16 @@
             </div>
             <div class="card-wraper">
                <div class="card">
-                  <img src="images/card-3.jpeg" alt="Image">
-                  <div class="card-icons">
-                     <span class="material-icons bid_landscape" title="View">bid_landscape</span>
-                     <span class="material-icons delete" title="Delete">close</span>
-                     <span class="material-icons edit" title="Edit">edit</span>
+               <div class="card-hovered">
+                  <div class="img-hover">
+                     <img src="images/card-3.jpeg" alt="Image">
                   </div>
+                  <div class="card-icons">
+                     <span class="material-icons burst_mode" title="View">burst_mode</span>
+                     <span class="material-icons edit" title="Edit">edit</span>
+                     <span class="material-icons delete" title="Delete">close</span>
+                  </div>
+               </div>
                   <div class="card-paragraf">
                         <h2>Beautiful Castle</h2>
                      <p>
@@ -299,7 +317,7 @@
                </div>
             </div>
          </div>
-   
+         <div class="separator"></div>
       <footer>
       <div class="info">
       <span>Home</span> <span>Company</span> <span>Protofolio</span>
