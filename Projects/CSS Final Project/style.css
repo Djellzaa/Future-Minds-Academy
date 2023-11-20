@@ -9,9 +9,12 @@
     --primary-font-size: 24px;
     --secondary-font-size: 16px;
     --default-color: rgb(255, 255, 255);
-    --background-color: rgba(0, 0, 0, 0.8);
+    --container-bacground:rgba(231, 231, 231, 0.884);
+    --background-color: rgba(0, 0, 0, 0.7);
     --sidebar-background: url('images/sidebar-1.jpg');
     --aside-item-hover-color: rgb(70, 67, 67);
+    --main-color:rgb(231, 53, 40);
+    --icons-gradient:linear-gradient(90deg, rgb(73, 180, 82)0%, rgb(4, 150, 24));
 }
 
 * {
@@ -25,8 +28,7 @@ body {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 300px 1fr;
-    grid-template-columns: 300px 1fr;
-    background-color: rgb(238, 238, 238);
+    grid-template-columns: 300px 1fr ;
     font-family: Roboto;
 
 }
@@ -94,7 +96,7 @@ aside {
 .author-info img {
     border-radius: 50%;
     margin-right: 10px;
-    padding: 5px;
+    
 }
 
 .author-name {
@@ -109,7 +111,6 @@ aside {
 .author-info .expand-more {
     position: relative;
     right: -100px;
-    top: 5px;
 
 }
 
@@ -139,8 +140,8 @@ aside {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    background-color: rgb(231, 53, 40);
-    color: white;
+    background-color: var(--main-color);
+    color: var(--default-color);
     text-align: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -154,7 +155,7 @@ aside {
 }
 
 .container {
-    background-color: rgb(231, 231, 231);
+    background-color:var(--container-bacground);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -186,10 +187,13 @@ aside {
             align-items: center;
 
 }
+.header-icon-dashboard{
+    margin-left: 1.2rem ;
+}
 
 .dashboard-icon .material-icons {
     font-size: 24px;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--default-color);
     color: rgb(8, 8, 8);
     border-radius: 50%;
     padding: 10px;
@@ -203,7 +207,7 @@ aside {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    gap: 1.5rem;
+    
 }
 
 .search-input {
@@ -213,6 +217,8 @@ aside {
     border-bottom: 1px solid transparent;
     background-color: rgba(211, 211, 211, 0);
     border-bottom: 1px solid gray;
+    transition: border-bottom 0.3s ease; 
+    margin-right: 5px;
 }
 
 .search-icon {
@@ -221,6 +227,9 @@ aside {
     border-radius: 50%;
     padding: 10px;
     cursor: pointer;
+    text-align: center;
+    align-items: center;
+    margin-right: 1.5rem;
 
 }
 
@@ -236,7 +245,7 @@ aside {
 }
 
 .search-input:focus {
-    border-bottom: 2px solid rgb(102, 10, 64);
+    border-bottom: 2px solid rgb(138, 34, 95);
 }
 
 .search-icon:hover {
@@ -260,33 +269,29 @@ aside {
 }
 
 .notification-number {
-    background-color: red;
-    color: white;
+    background-color:rgb(230, 43, 43);
+    color: var(--default-color);
     border-radius: 50%;
     width: 1.2rem;
     text-align: center;
-    padding: auto;
     position: absolute;
     top: -5px;
     right: -3px;
-    border: 1px solid white;
+    z-index: 2;
+    border: 1px solid var(--default-color);
 }
 
 .header-icon {
-    color: var(--default-color);
-    cursor: pointer;
-    margin-left: 10px;
     cursor: pointer;
     position: relative;
 }
 
 .header-icon .material-icons {
-    font-size: 24px;
+    font-size: var(--primary-font-size)
 }
 
 .notification-box {
     position: relative;
-    color: rgb(73, 73, 73);
     margin: 0;
 }
 
@@ -301,7 +306,7 @@ aside {
             box-shadow: 0 0 15px rgba(20, 20, 20, 0.3);
 }
 
-.notification-box:hover .notification-down {
+.notification-box:focus .notification-down {
     display: block;
     margin: 0;
 
@@ -320,8 +325,8 @@ aside {
 }
 
 .notification-down li:hover {
-    background-color: rgb(231, 53, 40);
-    color: white;
+    background-color: var(--main-color);
+    color: var(--default-color);
 }
 
 .sales-container {
@@ -348,7 +353,7 @@ aside {
     font-size: 1.8rem;
     color: #1f1c1c9c;
     font-weight: 100;
-    margin-top: -15px;
+    margin-top: -8px;
 }
 
 .locations {
@@ -429,13 +434,14 @@ table tr:last-child {
     position: relative;
     top: -40px;
     border: transparent;
-    background: rgb(8, 236, 65);
-    background: -o-linear-gradient(left, rgb(114, 231, 124)0%, rgb(8, 236, 38));
+    background: rgb(11, 85, 29);
+    background: -o-linear-gradient(left, rgb(11, 85, 29)0%, rgbrgb(85, 223, 104));
     background: -webkit-gradient(linear, left top, right top, from(rgb(114, 231, 124)), to(rgb(8, 236, 38)));
-    background: linear-gradient(90deg, rgb(114, 231, 124)0%, rgb(8, 236, 38));
-    color: white;
-    width: 60px;
-    height: 60px;
+    background: var(--icons-gradient);
+    color: var(--default-color);
+    width: 70px;
+    height: 70px;
+    border-radius: 3px;
 }
 
 .sales-container h1 {
@@ -499,7 +505,7 @@ table tr:last-child {
     position: relative;
     top: -30px;
     border: transparent;
-    color: white;
+    color: var(--default-color);
     width: 60px;
     height: 60px;
 }
@@ -513,12 +519,11 @@ table tr:last-child {
     font-weight: lighter;
     color: rgba(31, 28, 28, 0.678);
 }
-
 .chair {
     background: rgb(236, 157, 8);
     background: -o-linear-gradient(left, rgb(235, 178, 73)0%, rgb(236, 157, 8));
     background: -webkit-gradient(linear, left top, right top, from(rgb(235, 178, 73)), to(rgb(236, 157, 8)));
-    background: linear-gradient(90deg, rgb(235, 178, 73)0%, rgb(236, 157, 8));
+    background: linear-gradient(90deg, rgb(224, 156, 28)0%, rgb(247, 178, 51));
 }
 
 .blog-info {
@@ -551,24 +556,25 @@ table tr:last-child {
 }
 
 .bar_chart {
-    background: rgb(236, 8, 160);
-    background: -o-linear-gradient(left, rgb(231, 114, 196)0%, rgb(236, 8, 187));
+    background: rgb(100, 3, 68);
+    background: -o-linear-gradient(left, rgb(27, 26, 27) 0%, rgb(99, 1, 76));
     background: -webkit-gradient(linear, left top, right top, from(rgb(231, 114, 196)), to(rgb(236, 8, 187)));
-    background: linear-gradient(90deg, rgb(231, 114, 196)0%, rgb(236, 8, 187));
+    background: linear-gradient(90deg, rgb(228, 106, 191) 0%, rgb(233, 56, 194));
 }
+
 
 .store {
     background: rgb(8, 236, 65);
     background: -o-linear-gradient(left, rgb(114, 231, 124)0%, rgb(8, 236, 38));
     background: -webkit-gradient(linear, left top, right top, from(rgb(114, 231, 124)), to(rgb(8, 236, 38)));
-    background: linear-gradient(90deg, rgb(114, 231, 124)0%, rgb(8, 236, 38));
+    background: var(--icons-gradient)
 }
 
 .public {
     background: rgb(23, 8, 236);
     background: -o-linear-gradient(left, rgb(114, 136, 231)0%, rgb(8, 88, 236));
     background: -webkit-gradient(linear, left top, right top, from(rgb(114, 136, 231)), to(rgb(8, 88, 236)));
-    background: linear-gradient(90deg, rgb(114, 136, 231)0%, rgb(8, 88, 236));
+    background: linear-gradient(90deg, rgb(107, 133, 247)0%,rgb(60, 109, 199));
 }
 
 .listing {
@@ -577,44 +583,35 @@ table tr:last-child {
 }
 
 .cards {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1.5rem 1fr 1.5rem 1fr;
-    grid-template-columns: repeat(3,1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-content: center;
     margin-left: 2rem;
-    margin-right: 2rem;
+    margin-right: 1.5rem;
     margin-top: 2.5rem;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-      
+    gap: 2rem; 
 }
 
 .card-wraper {
     padding: 1.2rem;
     border-radius: 0.6rem;
-    background-color: white;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    background-color: var(--default-color);
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin: 0.6rem;
-    width: 100%;
+    flex-direction: column;
+    margin: 1rem;
 }
 
 .card {
     border-radius: 15px;
-    gap: 1rem;
+    gap: 1.5rem;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+
 }
 
 .card-icons {
     position: relative;
-    top: -5px;
+    top: -20px;
     left: 55%;
     text-align: center;
     -webkit-transform: translateX(-50%);
@@ -625,15 +622,15 @@ table tr:last-child {
     -webkit-transition: opacity 0.3s ease-in-out;
     -o-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
-    cursor: -webkit-grab;
-    cursor: grab;
+    cursor: -webkit-pointer;
+    cursor: pointer;
 }
 
 .card-hovered:hover .card-icons {
     opacity: 1;
     cursor: pointer;
-    cursor: -webkit-grab;
-    cursor: grab;
+    cursor: -webkit-pointer;
+    cursor: pointer;
 }
 
 .card img {
@@ -646,8 +643,8 @@ table tr:last-child {
     -o-transition: transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-    cursor: -webkit-grab;
-    cursor: grab;
+    cursor: -webkit-pointer;
+    cursor: pointer;
 }
 
 .card-hovered:hover img {
@@ -658,32 +655,21 @@ table tr:last-child {
    
 }
 
-.card-paragraf {
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: flex;
-   -webkit-box-orient: vertical;
-   -webkit-box-direction: normal;
-       -ms-flex-direction: column;
-           flex-direction: column;
-   -webkit-box-align: center;
-       -ms-flex-align: center;
-           align-items: center;
-   -webkit-box-pack: center;
-       -ms-flex-pack: center;
-           justify-content: center;
-
+.card-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
-.card-paragraf p {
-    color: #494646ad;
-    text-align: center;
+.card-title{
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.733);
 }
-
-.card-paragraf h2 {
-    color: rgba(0, 0, 0, 0.664);
-    font-size: 1.5em;
+.card-paragraf{
     text-align: center;
+    padding-top: 1.5rem;
+    color: rgba(31, 28, 28, 0.336);
+
 }
 
 .separator {
@@ -692,9 +678,11 @@ table tr:last-child {
 }
 
 .bottom-content {
+   margin-top: 1.5rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin-top: auto;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -702,6 +690,7 @@ table tr:last-child {
         -ms-flex-align: center;
             align-items: center;
     padding: 5px;
+   
 }
 
 .price,
@@ -709,22 +698,53 @@ table tr:last-child {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+
+    margin-top: auto;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center;
-}
+            align-items: end;
 
+}
+.location{
+    color: rgba(0, 0, 0, 0.479);
+
+}
 .burst_mode {
     color: rgba(128, 128, 128, 0.733);
 }
 
-.delete {
+.close {
     color: rgba(255, 0, 0, 0.678);
 }
 
 .edit {
     color: rgba(0, 128, 0, 0.644);
 }
+.header-icon.tooltip-hover::before {
+    content: attr(title);
+    position: absolute;
+    background-color: black;
+    color: var(--default-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    bottom: -30px; 
+    left: 100%; 
+    transform: translateX(-50%); 
+    z-index: 1; 
+ }
+ 
+ .header-icon.tooltip-hover:hover::before {
+    opacity: 1;
+    visibility: visible;
+ }
+ .header-icon.tooltip-hover::before {
+    content: attr(data-tooltip);
+ } 
 
 footer {
     background-color: #e6e6e607;
@@ -862,7 +882,9 @@ footer {
                 flex-direction: column;
     }
   
-
+   td{ 
+    text-align: right;
+   }
     .grid-blog {
         -ms-grid-columns: 1fr 20px 1fr;
         grid-template-columns: repeat(2, 1fr);
@@ -875,7 +897,7 @@ footer {
     }
     .cards {
         -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         margin: 0;
         gap: 2.5rem;
     }
@@ -883,10 +905,13 @@ footer {
     .card-wraper {
         margin: 20px 0;
     }
-
+    .header-icon {
+        display: inline;
+    }
     .card-icons {
         position: relative;
-        top: -5px;
+        position: block;
+        top: -20px;
         left: 50%;
         -webkit-transform: translateX(-50%);
             -ms-transform: translateX(-50%);
@@ -925,8 +950,6 @@ footer {
         margin-top: 20px;
     }
 
-  
-
     footer {
         background-color: #e6e6e607;
         color: rgba(2, 2, 2, 0.39);
@@ -937,8 +960,7 @@ footer {
         display: -ms-flexbox;
         display: flex;
 
-    }
-
+    } 
 }
 
 @media only screen and (max-width: 680px) {
@@ -1090,10 +1112,12 @@ footer {
     .card-wraper {
         margin: 20px 0;
     }
-    
+    .header-icon {
+        display: inline;
+    }
     .card-icons {
-        position: relative;
-        top: -5px;
+        display: block;
+        top: -20px;
         left: 50%;
         -webkit-transform: translateX(-50%);
             -ms-transform: translateX(-50%);
@@ -1153,4 +1177,5 @@ footer {
                 justify-content: flex-end;
         font-size: 0.8rem;
     }
+  
 }
