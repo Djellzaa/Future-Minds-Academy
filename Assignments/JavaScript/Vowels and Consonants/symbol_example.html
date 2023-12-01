@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol Detector</title>
+</head>
+<body>
+
+<script>
+
+    document.addEventListener('keypress', (e) => {
+
+        const letter = e.key;
+
+       
+        if (letter.length === 1) {
+            let symbolType;
+
+    
+            if (/^[aeiou]$/i.test(letter)) {
+                symbolType = "Vowel";
+            }
+
+            else if (/^[a-z]$/i.test(letter)) {
+                symbolType = "Consonant";
+            }
+
+            else if (/^[0-9]$/.test(letter)) {
+                symbolType = "Number";
+            }
+
+            else {
+                symbolType = "Other Symbol";
+            }
+
+
+            console.log(`You pressed '${letter}'. It is a ${symbolType}.`);
+        }
+    });
+</script>
+
+</body>
+</html>
