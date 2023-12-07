@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        font-family: monospace;
+      }
+
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .wrapper {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .players {
+        display: flex;
+        padding: 20px;
+      }
+
+      .player-box {
+        padding: 20px;
+        margin: 0;
+        border: 0.2px solid rgba(255, 255, 255, 0.315);
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      #result {
+        font-size: 18px;
+        margin-top: 20px;
+        color: white;
+      }
+
+      #answerText {
+        color: white;
+        margin-top: 20px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-align: center;
+      }
+    </style>
+    <title>Closest Answer Game</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="wrapper">
+        <div id="answerText">The correct answer is: <span id="correctAnswer"></span></div>
+        <div class="players">
+          <div id="playerOne" class="player-box">Player One <br /><span id="playerOneAnswer"></span></div>
+          <div id="playerTwo" class="player-box">Player Two <br /><span id="playerTwoAnswer"></span></div>
+        </div>
+        <div id="result"></div>
+      </div>
+    </div>
+
+    <script>
+
+      let answer = Math.floor(Math.random() * 20) + 1;
+      let playerOne = parseInt(prompt("Player One: "));
+      let playerTwo = parseInt(prompt("Player Two: "));
+
+      if (isNaN(playerOne) || isNaN(playerTwo))
+        throw new Error("Please write only numbers!");
+
+      if (playerOne < 0 || playerOne > 20 || playerTwo < 0 || playerTwo > 20)
+      {
+        throw new Error("Only select numbers between 0-20!");
+      }
+
+      let playerOneDistance = Math.abs(answer - playerOne);
+      let playerTwoDistance = Math.abs(answer - playerTwo);
+
+      document.getElementById("correctAnswer").innerHTML = answer;
+      document.getElementById("playerOneAnswer").innerHTML = playerOne;
+      document.getElementById("playerTwoAnswer").innerHTML = playerTwo;
+
+      if (playerOneDistance < playerTwoDistance) 
+      {
+        document.getElementById("playerOne").style.backgroundColor = "green";
+        document.getElementById("playerTwo").style.backgroundColor = "red";
+        document.getElementById("result").innerHTML = "Player One Wins!";
+      } 
+      else if (playerTwoDistance < playerOneDistance) 
+      {
+        document.getElementById("playerOne").style.backgroundColor = "red";
+        document.getElementById("playerTwo").style.backgroundColor = "green";
+        document.getElementById("result").innerHTML = "Player Two Wins!";
+      } 
+      else 
+      {
+        document.getElementById("playerOne").style.backgroundColor = "orange";
+        document.getElementById("playerTwo").style.backgroundColor = "orange";
+        document.getElementById("result").innerHTML = "It's a Tie!";
+      }
+
+      document.getElementById("correctAnswer").innerHTML = answer;
+      document.getElementById("playerOneAnswer").innerHTML = playerOne;
+      document.getElementById("playerTwoAnswer").innerHTML = playerTwo;
+    </script>
+  </body>
+</html>
