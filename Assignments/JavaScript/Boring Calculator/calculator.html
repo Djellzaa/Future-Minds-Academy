@@ -9,31 +9,33 @@
     <script>
         let firstNumber = parseInt(prompt('Write your first number:'));
         let operation = prompt('What operation do you want to do: ');
-        let SecondNumber = parseInt(prompt('Write your Second number:'));
-        let rez;
+        let secondNumber = parseInt(prompt('Write your second number:'));
+        let result;
 
-    if (operation == "+"){
-            rez = firstNumber + SecondNumber;
-    }
-      else if (operation == "-") {
-         rez= firstNumber - secondNumber;
-      }
-      else if( operation == "*"){
-        rez= firstNumber * secondNumber;
-      }
-      else if( operation == "/") {
-        if (SecondNumber == 0) {
-            throw new Error (`Can not divide by zero !`);
+        switch (operation) {
+            case "+":
+                result = firstNumber + secondNumber;
+                break;
+            case "-":
+                result = firstNumber - secondNumber;
+                break;
+            case "*":
+                result = firstNumber * secondNumber;
+                break;
+            case "/":
+                if (secondNumber === 0) {
+                    throw new Error('Cannot divide by zero!');
+                }
+                result = firstNumber / secondNumber;
+                break;
+            case "%":
+                result = firstNumber % secondNumber;
+                break;
+            default:
+                console.log('You have entered an invalid operation!');
         }
-         rez = firstNumber / secondNumber;
-      }
-      else if( operation == "%") {
-         rez = firstNumber % secondNumber;
-      }
-      else {
-        console.log('Keni shkruar gabim operacionin!')
-      }
-      console.log(rez);
+
+        console.log(result);
     </script>
 </body>
 </html>
