@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hailstone Sequence</title>
+  </head>
+  <body>
+    <script>
+      let userInput = prompt("Enter a positive number to start:");
+
+
+      let number = parseInt(userInput);
+
+      if (!isNaN(number) && number > 0) {
+        console.log(`Starting from ${number}:`);
+
+        while (number !== 1) {
+          console.log(number);
+
+          if (number % 2 === 0) {
+        
+            number /= 2;
+          } else {
+          
+            number = 3 * number + 1;
+          }
+        }
+
+        console.log(1); 
+      } else {
+        console.log("Invalid input. Please enter a positive number!.");
+      }
+    </script>
+  </body>
+</html>

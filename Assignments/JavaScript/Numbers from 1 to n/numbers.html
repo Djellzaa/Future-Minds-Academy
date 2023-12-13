@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        //printing the numbers in vertical line
+    //   let userInput = prompt("Please enter a number from 1 to 100:");
+    //   let counter = 1;
+    //   let string = "";
+    // if (!isNaN(userInput) && userInput > 0 && userInput <= 100) {
+
+    //   while (counter <= userInput) {
+    //     console.log(counter);
+    //     counter++;
+    //   }
+    // }
+    // else {
+    //     console.log('Invalid input! Please enter a valid number from 1 to 100.');
+    // }
+    //   console.log(counter);
+
+    //printin numbers in horizontal line and with commas
+  
+      let userNumber = prompt("Please enter a number from 1 to 100:");
+
+      let counter = 1;
+      let stringNr = ""; 
+
+      if (!isNaN(userNumber) && userNumber > 0 && userNumber <= 100) {
+        while (counter <= userNumber) {
+          stringNr += counter;
+
+        
+          if (counter < userNumber) {
+            stringNr += ", ";
+          }
+
+          counter++;
+        }
+
+        console.log(stringNr);
+      } else {
+        console.log('Invalid input! Please enter a valid number from 1 to 100.');
+      }
+  
+    </script>
+  </body>
+</html>

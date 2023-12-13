@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci Sequence</title>
+  </head>
+  <body>
+    <script>
+      let userInput = prompt("Enter a number:");
+      let input = parseInt(userInput);
+
+      if (!isNaN(input) && input > 0) {
+        console.log(`First ${input} numbers from the Fibonacci Sequence:`);
+
+        let first = 1;
+        let second = 1;
+        let nextNr;
+
+        for (let i = 0; i < input; i++) {
+          console.log(first);
+          
+          nextNr = first + second;
+          first = second;
+          second = nextNr;
+        }
+      } else {
+        console.log("Invalid input!. Please enter a positive number.");
+      }
+    </script>
+  </body>
+</html>
