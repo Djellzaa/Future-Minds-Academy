@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+</head>
+
+<body>
+  <script>
+
+    function printHelloWorldTenTimes() {
+      for (let i = 0; i < 10; i++) {
+        console.log("Hello World");
+      }
+    }
+    printHelloWorldTenTimes();
+
+    function printString(inputString) {
+      console.log(inputString);
+    }
+    printString("Hello, this is a sample string.");
+
+    function KilometersToMiles(kilometers) {
+      let miles = kilometers * 0.621371;
+      return miles;
+    }
+
+    let miles = KilometersToMiles(10);
+    console.log(`10 kilometers is approximately ${miles} miles.`);
+
+
+    function CircleArea(radius) {
+      let area = 3.14 * radius * radius;
+      return area;
+    }
+    let radius = 5;
+    let area = CircleArea(radius);
+    console.log(`The area of a circle with radius ${radius} is approximately ${area}`);
+
+    function WelcomeMessage(name, surname) {
+      return `Welcome, ${name} ${surname}`;
+    }
+    let Message = WelcomeMessage("Djellza", "Hajrullahu");
+    console.log(Message);
+
+    function isWorkingCitizen(age) {
+      return age >= 18 && age < 65;
+    }
+    let age = 30;
+    console.log(`Is the person a working citizen? ${isWorkingCitizen(age)}`);
+
+    function isEven(number) {
+      return number % 2 === 0;
+    }
+    let number = 16;
+    //let number = prompt('Shkruani nje numer:');
+    console.log(`Is ${number} an even number? ${isEven(number)}`);
+
+  </script>
+</body>
+
+</html>
