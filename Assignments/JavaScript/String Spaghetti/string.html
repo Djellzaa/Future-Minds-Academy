@@ -20,11 +20,11 @@
         let period = timeString.substring(6);
         console.log(`${hours}:${minutes}:${period}`);
 
-        let cityString ='New York, 15°C';
-        let city = (cityString.substring(0,8));
-        let number =(parseInt(cityString.substring(9,12)));
-        let grade = (cityString.substring(13,15));
-        console.log(`${city} ${number} ${grade}`);
+        let temperature = 'New York, 15°C';
+        let presja = temperature.indexOf(',');
+        let city = temperature.substring(0, presja);
+        let temp = parseInt(temperature.substring(presja + 2, temperature.length-2));
+        console.log(`Qyteti: ${city} dhe temperatura: ${temp}`);
 
     </script>
 </body>
