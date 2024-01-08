@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Tasks</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* Font style */
+            display: flex;
+            align-items: left;
+            margin: 10;
+        }
+
+        #tasksContainer {
+            background-color: #3498db; 
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tasksContainer">
+        <h1>Daily Tasks - <span id="currentDate"></span></h1>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        function addTaskToList(task) {
+            let taskList = document.getElementById('taskList');
+            let taskItem = document.createElement('li');
+            taskItem.textContent = task;
+            taskList.appendChild(taskItem);
+        }
+
+        function promptForTasks() {
+            const currentDate = document.getElementById('currentDate');
+            const now = new Date();
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            currentDate.textContent = now.toLocaleDateString('en-US', dateOptions);
+
+            let attempts = 3;
+            while (attempts > 0) {
+                const task = prompt(`Enter your task for the day (you have ${attempts} attempts remaining):`);
+                if (task === null || task.trim() === '') {
+                const task = prompt(`Enter your task for the day (you have ${attempts} attempts remaining):`);
+                }
+                addTaskToList(task);
+                attempts--;
+            }
+        }
+        window.onload = promptForTasks;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let otherCircle = {
+            radius: 8,
+            center: {
+                x: 4,
+                y: 6,
+            },
+        }
+
+        let circle = {
+            radius: 5,
+            center: {
+                x: 4,
+                y: 5
+            },
+
+            getRadius: function () {
+                return this.radius
+            },
+            setRadius: function (radius) {
+                this.radius = radius
+            },
+            getArea: function (radius) {
+                return Math.PI * this.radius ** 2;
+            },
+
+            getPerimeter: function () {
+                return Math.PI * this.radius;
+            },
+
+            getCenter: function () {
+                return this.center
+            },
+
+            setCenter: function (center) {
+                this.center = center
+            },
+            increaseRadius: function (number) {
+                this.radius *= number
+            },
+            shrinkRadius: function (number) {
+                this.radius -= number
+            },
+            printDetails: function () {
+                console.log("Radius:", this.getRadius());
+                console.log("Center:", this.getCenter());
+            },
+
+            equalsCircle: function (otherCircle) {
+                return this.radius === otherCircle.radius &&
+                    this.center.x === otherCircle.center.x &&
+                    this.center.y === otherCircle.center.y;
+            }
+
+        }
+
+        circle.printDetails(),
+            circle.setRadius(8),
+            circle.setCenter({ x: 4, y: 6 }),
+            circle.increaseRadius(3),
+            circle.printDetails(),
+            circle.shrinkRadius(2),
+            circle.printDetails()
+        console.log("Are circles equal?", circle.equalsCircle(otherCircle));
+
+    </script>
+</body>
+
+</html>
