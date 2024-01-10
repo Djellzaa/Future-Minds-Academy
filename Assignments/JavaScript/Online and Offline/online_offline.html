@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Popup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #offlineStatus {
+            display: none;
+            background-color: #000000;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(121, 121, 121, 0.5);
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="offlineStatus">You are offline, please wait until you are reconnected</div>
+
+    <script>
+        const offlinePopup = document.getElementById('offlineStatus');
+
+        function onlineStatus() {
+            offlinePopup.style.display = navigator.onLine ? 'none' : 'block';
+        }
+
+        onlineStatus();
+
+        window.addEventListener('online', onlineStatus);
+        window.addEventListener('offline', onlineStatus);
+    </script>
+</body>
+
+</html>

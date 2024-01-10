@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #textbox {
+        width: 50%;
+        height: 50px;
+        background-color: black;
+        color: white;
+        font-size: 1em;
+        font-family:cursive;
+        border: none;
+
+    }
+</style>
+<body>
+    <input id="textbox" placeholder="Write something..." type="text">
+    <script>
+        let textbox = document.getElementById('textbox');
+        document.addEventListener('keypress',(event) => {
+            let character = event.key;
+            textbox.textContent += character;
+        })
+    </script>
+</body>
+</html>

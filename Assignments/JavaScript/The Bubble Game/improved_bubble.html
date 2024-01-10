@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Animated Bubbles</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .bubble {
+            position: fixed;
+            border-radius: 50%;
+            animation: float 5s infinite alternate;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform:translateY(-20px) ;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function createRandomBubble() {
+            let bubble = document.createElement('div');
+            bubble.className = 'bubble';
+
+            let size = Math.floor(Math.random() * 80) + 20;
+            let width = Math.random() * window.innerWidth;
+            let height = Math.random() * window.innerHeight;
+
+            bubble.style.width = size + 'px';
+            bubble.style.height = size + 'px';
+            bubble.style.left = width + 'px';
+            bubble.style.top = height + 'px';
+            let randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            bubble.style.backgroundColor = randomColor;
+            bubble.style.animationDelay = Math.random() * 5 + 's';
+
+            document.body.appendChild(bubble);
+        }
+        for (let i = 0; i < 300; i++) {
+            createRandomBubble();
+        }
+        
+        function popBubble(event) {
+            if (event.target.classList.contains('bubble')) { 
+                event.target.style.animation = 'pop';
+                setTimeout(() => {
+                    event.target.remove();
+                    checkWin();
+                }, 100);
+            }
+        }
+
+        function checkWin() {
+            const bubbles = document.querySelectorAll('.bubble');
+            if (bubbles.length === 0) {
+                alert('Congratulations! You popped all the bubbles. You won!');
+            }
+        }
+
+        document.addEventListener('click', popBubble);
+
+      
+    </script>
+</body>
+
+</html>
