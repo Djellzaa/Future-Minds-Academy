@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        #cakeContainer {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background-color: #f33d49;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            margin-right: 15px;
+            box-shadow: 5px 5px 10px rgba(8, 8, 8, 0.2);
+        }
+
+        #ageInput {
+            font-size: 16px;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 2px solid #f33d49;
+            border-radius: 10px;
+            color: #ff040c;
+        }
+
+        #candles {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            margin-top: 10px;
+        }
+
+        .candle {
+            width: 8px;
+            height: 40px;
+            background-color: #fea2a5;
+            border-radius: 2px;
+            margin: 5px;
+            position: relative;
+        }
+
+        .flame {
+            position: absolute;
+            top: -20px;
+            left: -5px;
+            width: 20px;
+            height: 30px;
+            background: radial-gradient(circle, #ffeb3b 10%, transparent 40%);
+            animation: flameAnimation 2s infinite alternate-reverse;
+
+        }
+
+        @keyframes flameAnimation {
+            0% {
+                transform: scaleY(1);
+            }
+
+            100% {
+                transform: scaleY(2);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cakeContainer">
+        <div id="candles"></div>
+    </div>
+    <input type="text" id="ageInput" placeholder="Write your age:">
+    <script>
+        let ageInput = document.getElementById('ageInput');
+        let candlesContainer = document.getElementById('candles');
+
+        ageInput.addEventListener('input', updateCandles);
+
+        function updateCandles() {
+            let age = parseInt(ageInput.value);
+            if (!isNaN(age) && age > 0) {
+                renderCandles(age);
+            } else {
+                clearCandles();
+            }
+        }
+
+        function renderCandles(count) {
+            clearCandles();
+            for (let i = 0; i < count; i++) {
+                let candle = document.createElement('div');
+                let flame = document.createElement('div');
+                candle.className = 'candle';
+                flame.className = 'flame';
+                candle.appendChild(flame);
+                candlesContainer.appendChild(candle);
+            }
+        }
+
+        function clearCandles() {
+            candlesContainer.innerHTML = '';
+        }
+    </script>
+</body>
+
+</html>

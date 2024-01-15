@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+   #info{
+    width: 50%;
+   }
+    .content {
+        width: 100px;
+        position: fixed;
+        bottom: 30px;
+        right: 40px;
+    }
+
+    input[type="range"] {
+        appearance: slider-vertical;
+    }
+</style>
+
+<body>
+    <p id="info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident officiis, perspiciatis ipsa ullam
+        debitis consectetur</p>
+    <div class="content">
+        <input type="range" id="rangeInput">
+    </div>
+
+    <script>
+        let rngInput = document.getElementById('rangeInput');
+        rngInput.addEventListener('input', function () {
+            changedText(this.value);
+        });
+
+        function changedText(value) {
+            let infoElement = document.getElementById('info');
+            let fontSize = 10 + value * 2;
+            infoElement.style.fontSize = `${fontSize}px`;
+        }
+    </script>
+</body>
+
+</html>
