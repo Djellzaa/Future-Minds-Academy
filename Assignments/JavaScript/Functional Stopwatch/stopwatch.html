@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Stopwatch</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f0f0f0;
+        }
+
+        #stopwatch-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        #timer {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+            letter-spacing: 2px;
+        }
+
+        #buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #lap-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            text-align: left;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        #lap-list li {
+            font-size: 1.2em;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        #lap-list li:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div id="stopwatch-container">
+        <div id="timer">00:00:00</div>
+        <div id="buttons">
+            <button id="startBtn" onclick="start()">Start</button>
+            <button id="stopBtn" onclick="stop()" disabled>Stop</button>
+            <button id="lapBtn" onclick="lap()" style="display: none;" disabled>Lap</button>
+            <button id="resetBtn" onclick="reset()" style="display: none;" disabled>Reset</button>
+        </div>
+        <ul id="lap-list"></ul>
+    </div>
+
+    <script>
+        let startTime;
+        let lapTime;
+        let isRunning = false;
+        let laps = [];
+
+        function start() {
+            startTime = new Date().getTime();
+            lapTime = startTime;
+            isRunning = true;
+            updateButtons();
+            updateTimer();
+        }
+
+        function stop() {
+            isRunning = false;
+            updateButtons();
+        }
+
+        function reset() {
+            isRunning = false;
+            laps = [];
+            updateButtons();
+            updateTimer();
+            updateLaps();
+        }
+
+        function lap() {
+            if (isRunning) {
+                const currentTime = new Date().getTime();
+                const elapsed = currentTime - lapTime;
+                lapTime = currentTime;
+
+                const formattedTime = formatTime(elapsed);
+                laps.push(formattedTime);
+
+                updateLaps();
+            }
+        }
+
+        function updateTimer() {
+            if (isRunning) {
+                const currentTime = new Date().getTime();
+                const elapsed = currentTime - startTime;
+                const formattedTime = formatTime(elapsed);
+                document.getElementById('timer').textContent = formattedTime;
+                setTimeout(updateTimer, 10);
+            }
+        }
+
+        function formatTime(time) {
+            const minutes = Math.floor(time / (60 * 1000));
+            const seconds = Math.floor((time % (60 * 1000)) / 1000);
+            const milliseconds = Math.floor((time % 1000) / 10);
+            return `${pad(minutes)}:${pad(seconds)}:${pad(milliseconds)}`;
+        }
+
+        function pad(number) {
+            return number.toString().padStart(2, '0');
+        }
+
+        function updateButtons() {
+            document.getElementById('startBtn').disabled = isRunning;
+            document.getElementById('stopBtn').disabled = !isRunning;
+            document.getElementById('lapBtn').style.display = isRunning ? 'inline-block' : 'none';
+            document.getElementById('resetBtn').style.display = isRunning ? 'inline-block' : 'none';
+        }
+
+        function updateLaps() {
+            const lapList = document.getElementById('lap-list');
+            lapList.innerHTML = '';
+            laps.forEach((lap, index) => {
+                const lapItem = document.createElement('li');
+                lapItem.textContent = `Lap ${index + 1}: ${lap}`;
+                lapList.appendChild(lapItem);
+            });
+        }
+    </script>
+</body>
+</html>
