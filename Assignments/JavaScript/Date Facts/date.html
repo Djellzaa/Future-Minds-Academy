@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Facts Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fcf8d655;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #birthday-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(164, 110, 3, 0.775);
+            transition: box-shadow 0.5s;
+
+        }
+
+        #facts-container {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .factItem {
+            flex: 1;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #f2eb65b5;
+            border-radius: 8px;
+            background-color: #ffffff;
+            transition: transform 0.3s ease-in-out;
+
+        }
+
+        .factItem:hover {
+            transform: scale(1.05);
+        }
+
+        .error {
+            color: red;
+        }
+
+        #birthday-generator {
+            background-color: #FFA500;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #birthday-generator:hover {
+            background-color: #FFD700;
+        }
+
+        #dob {
+            width: 200px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="birthday-container">
+        <h2>Birthday Facts Generator</h2>
+        <p>Enter your birthday date below to generate cool facts:</p>
+        <form id="birthdayForm">
+            <input type="date" id="dob" required>
+            <button type="submit" id="birthday-generator">Generate Facts</button>
+        </form>
+    </div>
+
+    <div id="facts-container"></div>
+
+    <script>
+        const apiUrl = 'https://numbersapi.p.rapidapi.com/random/trivia?min=10&max=20&fragment=true&json=true';
+        const apiKey = '117a0e900dmshe18482621900548p12e309jsn245174225e0f';
+
+        const getBirthdayFacts = async (date) => {
+            const promises = Array.from({ length: 3 }, (_, index) =>
+                fetch(`${apiUrl}/${date}/${index + 1}/date?fragment=true&json=true`, {
+                    method: 'GET',
+                    headers: {
+                        'X-RapidAPI-Key': apiKey,
+                        'X-RapidAPI-Host': 'numbersapi.p.rapidapi.com'
+                    }
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+            );
+
+            try {
+                const results = await Promise.all(promises);
+
+                if (results.some(result => result.found === false)) {
+                    throw new Error(`Facts not found for the specified date: ${date}`);
+                }
+
+                results.forEach((result, index) => {
+                    displayFact(`Fact ${index + 1}: ${result.text}`);
+                });
+
+                displayError('');
+            } catch (error) {
+                console.error(error);
+                displayError(`Error: ${error.message}`);
+            }
+        };
+
+        const displayFact = (fact) => {
+            const factsContainer = document.getElementById('facts-container');
+            const factItemElement = document.createElement('div');
+            factItemElement.classList.add('factItem');
+            factItemElement.textContent = fact;
+            factsContainer.appendChild(factItemElement);
+        };
+
+        const displayError = (error) => {
+            document.getElementById('errorMessage').textContent = error;
+        };
+
+        document.getElementById('birthdayForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const birthdayDate = document.getElementById('dob').value;
+            getBirthdayFacts(birthdayDate);
+        });
+
+    </script>
+</body>
+
+</html>
