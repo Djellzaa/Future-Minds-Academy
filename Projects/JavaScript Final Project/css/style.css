@@ -1212,9 +1212,7 @@ input:checked+.slider:before {
     text-align: center;
     font-weight: 600;
 }
-aside#sidebar.collapsed{
-    animation: fadeOut 0.5s ease; 
-}
+
 .delete-animation {
     animation: fadeOut 0.5s ease; 
 }
