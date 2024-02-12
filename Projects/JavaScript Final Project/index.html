@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+   <link rel="stylesheet" href="css/style.css" />
+   <link rel="stylesheet" href="css/style-responsive.css" />
+   <title>CP CoolPage</title>
+</head>
+
+<body>
+   <aside id="sidebar">
+      <div>
+         <div class="page-title">CP <span id="coolpage">COOL PAGE</span></div>
+         <div class="separator"></div>
+         <div class="author-info">
+            <img id="author-img" src="images/avatar.jpg" alt="John Doe" width="50" height="50">
+            <span class="author-name">John Doe</span>
+            <!-- <span class="material-icons expand-more ">expand_more</span> -->
+         </div>
+         <div class="separator"></div>
+      </div>
+      <div class="aside-item active">
+         <span class="material-icons">dashboard</span><span class="description">Dashboard</span>
+      </div>
+      <div class="aside-item">
+         <span class="material-icons">image</span><span class="description">Pages</span>
+         <span class="material-icons expand-more">expand_more</span>
+         <div class="side-dropdown">
+            <ul class="dropdown-list">
+               <li><span>P</span><span   id="sub-info">Pricing</span></li>
+               <li><span>RS</span><span id="sub-info">RTLSupport</span></li>
+               <li><span>T</span><span   id="sub-info">Timeline</span></li>
+               <li><span>LP</span><span  id="sub-info">Login Page</span></li>
+               <li><span>RP</span><span  id="sub-info">Register Page</span></li>
+               <li><span>LSP</span><span id="sub-info">Lock Screen Page</span></li>
+               <li><span>UP</span><span  id="sub-info">User Profile</span></li>
+            </ul>
+         </div>
+      </div>
+      <div class="aside-item " >
+         <span class="material-icons">apps</span><span class="description">Components</span>
+         <span class="material-icons expand-more">expand_more</span>
+         <div class="side-dropdown">
+            <ul class="dropdown-list">
+               <li><span>B</span><span  id="sub-info">Button</span></li>
+               <li><span>GS</span><span id="sub-info">Grid System</span></li>
+               <li><span>P</span><span  id="sub-info">Panels</span></li>
+               <li><span>SA</span><span id="sub-info">Sweet Alert</span></li>
+               <li><span>N</span><span  id="sub-info">Notifications</span></li>
+               <li><span>I</span><span  id="sub-info">Icons</span></li>
+               <li><span>T</span><span  id="sub-info">Typography</span></li>
+               
+            </ul>
+         </div>
+      </div>
+      <div class="aside-item">
+         <span class="material-icons" tabindex="0">content_paste</span><span class="description">Forms</span>
+         <span class="material-icons expand-more">expand_more</span>
+         <div class="side-dropdown">
+            <ul class="dropdown-list">
+               <li><span>RF</span><span id="sub-info">Regular Forms</span></li>
+               <li><span>EF</span><span id="sub-info">Extended Forms</span></li>
+               <li><span>VF</span><span id="sub-info">Validation Forms</span></li>
+               <li><span>W</span><span  id="sub-info">Wizard</span></li>
+            </ul>
+         </div>
+      </div>
+      <div class="aside-item">
+         <span class="material-icons">grid_on</span><span class="description">Tables</span>
+         <span class="material-icons expand-more">expand_more</span>
+         <div class="side-dropdown">
+            <ul class="dropdown-list">
+               <li><span>RF</span><span id="sub-info">Regular Forms</span></li>
+               <li><span>EF</span><span id="sub-info">Extended Forms</span></li>
+               <li><span>DT</span><span id="sub-info">Data Tables.net</span></li>
+            </ul>
+         </div>
+      </div>
+      <div class="aside-item ">
+         <span class="material-icons">location_on</span><span class="description">Map</span>
+         <span class="material-icons expand-more">expand_more</span>
+         <div class="side-dropdown">
+            <ul class="dropdown-list">
+               <li><span>GM</span><span  id="sub-info">Google Map</span></li>
+               <li><span>FSM</span><span id="sub-info" >Full Screen Map</span></li>
+               <li><span>VM</span><span  id="sub-info">Vector Map</span></li>
+            </ul>
+         </div>
+      </div>
+      <div class="aside-item">
+         <span class="material-icons">widgets</span><span class="description">Widgets</span>
+         <span class="material-icons expand-more">expand_more</span>
+         <div class="side-dropdown">
+            <ul class="dropdown-list">
+               <li><span>RW</span><span id="sub-info">Regular Widgets</span></li>
+               <li><span>EW</span><span id="sub-info">Extended Widgets</span></li>
+            </ul>
+         </div>
+      </div>
+      <div class="aside-item">
+         <span class="material-icons">timeline</span><span class="description">Charts</span>
+         <span class="material-icons expand-more">expand_more</span>
+      </div>
+      <div class="aside-item">
+         <span class="material-icons">date_range</span> <span class="description">Calendar</span>
+         <span class="material-icons expand-more">expand_more</span>
+      </div>
+   </aside>
+   <div class="container">
+      <header>
+         <div class="header-content">
+            <div class="dash-menu">
+               <div class="left">Dashboard</div>
+            </div>
+            <div class="hamburger">
+               <span class="header-icon tooltip-hover" title="" data-tooltip="Menu">
+                  <span class="material-icons menu">menu</span>
+               </span>
+            </div>
+            <div class="dashboard-icon">
+               <span id="closed-menu" class="header-icon tooltip-hover" title="" data-tooltip="Menu">
+                  <span class="material-icons" id="sidebar-control">more_vert</span>
+               </span>
+               <span class="header-icon-dashboard">Dashboard</span>
+            </div>
+            <div class="header-content">
+               <div class="search-container">
+                  <input type="text" placeholder="Search" class="search-input">
+                  <span class="search-icon-container search-icon">
+                     <span class="header-icon tooltip-hover " title="" data-tooltip="Search">
+                        <span class="material-icons">search</span>
+                     </span>
+                  </span>
+                  <div class="header-icons">
+                     <span class=" header-icon tooltip-hover" title="" data-tooltip="Dashboard">
+                        <span class="material-icons">dashboard</span>
+                     </span>
+                     <div class="header-icon">
+                        <div class="notification-box" id="not-box">
+                           <div class="notification-number" id="notificationCount"></div>
+                           <span class=" header-icon tooltip-hover" title="" data-tooltip="Notification">
+                              <span class="material-icons">notifications</span>
+                           </span>
+                           <div class="notification-down" id="notifications">
+                           </div>
+                        </div>
+                     </div>
+                     <span class="header-icon tooltip tooltip-hover" title="" data-tooltip="Profile">
+                        <span class="material-icons">person</span>
+                     </span>
+                  </div>
+               </div>
+      </header>
+      <span id="settings-icon" class="material-icons" title="Open Settings">settings</span>
+      <div id="settings-div" class="settings-div">
+         <p id="sidebar-filter">SIDEBAR FILTERS</p>
+         <div class="color-circles">
+            <span class="color-circle selected"></span>
+            <span class="color-circle" id="red" tabindex="0"></span>
+            <span class="color-circle" id="green" tabindex="0"></span>
+            <span class="color-circle" id="blue" tabindex="0"></span>
+            <span class="color-circle" id="yellow" tabindex="0"></span>
+            <span class="color-circle" id="cyan" tabindex="0"></span>
+         </div>
+         <div class="separator"></div>
+         <p id="sidebar-text">SIDEBAR BACGROUND</p>
+         <div class="aside-background">
+            <div class="sidebar-circles" id="sidebar-circles">
+               <div id="white-circle" tabindex="0"></div>
+               <div id="black-circle" tabindex="0"></div>
+            </div>
+         </div>
+         <div class="separator"></div>
+         <div class="sidebar-image-container">
+            <p>Sidebar images</p>
+            <div class="switch-container">
+               <label class="switch">
+                  <input type="checkbox" id="imageSwitch" name="imageSwitch">
+                  <span class="slider"></span>
+               </label>
+            </div>
+         </div>
+         <div class="separator"></div>
+         <div class="sidebar-image">
+            <p>IMAGES</p>
+            <div class="image-container">
+               <img src="images/sidebar-1.jpg" class="image" tabindex="0">
+               <img src="images/sidebar-2.jpg" class="image" tabindex="0">
+               <img src="images/sidebar-3.jpg" class="image" tabindex="0">
+               <img src="images/sidebar-4.jpg" class="image" tabindex="0">
+            </div>
+         </div>
+      </div>
+      <div class="sales-container">
+         <div class="global-sales">
+            <span class="material-icons globicon ">language</span>
+            <h1>Global Sale by Top Locations</h1>
+         </div>
+         <div class="locations">
+            <div class="table-container">
+               <table>
+                  <tr>
+                     <td class="state-name"><img src="images/usa.png" class="flag" alt="Usa Flag"> USA</td>
+                     <td>2920</td>
+                     <td>53.25%</td>
+                  </tr>
+                  <tr>
+                     <td class="state-name">
+                        <img src="images/germany.png" class="flag" alt="Germany Flag"> Germany
+                     </td>
+                     <td>1300</td>
+                     <td>4.34%</td>
+                  </tr>
+                  <tr>
+                     <td class="state-name">
+                        <img src="images/australia.png" class="flag" alt="Australia Flag">
+                        Australia
+                     </td>
+                     <td>760</td>
+                     <td>23.49%</td>
+                  </tr>
+                  <tr>
+                     <td class="state-name">
+                        <img src="images/uk.png" class="flag" alt="UK Flag"> UnitedKingdom
+                     </td>
+                     <td>690</td>
+                     <td>13.35%</td>
+                  </tr>
+                  <tr>
+                     <td class="state-name">
+                        <img src="images/romania.png" class="flag" alt="Romania Flag"> Romania
+                     </td>
+                     <td>600</td>
+                     <td>7.89%</td>
+                  </tr>
+                  <tr>
+                     <td class="state-name">
+                        <img src="images/brasil.png" class="flag" alt="Brasil Flag"> Brasil
+                     </td>
+                     <td>550</td>
+                     <td>5.94%</td>
+                  </tr>
+               </table>
+            </div>
+            <div class="map-container">
+               <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1699646612882!5m2!1sen!2s"
+                  allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+         </div>
+      </div>
+      <div class="grid-blog">
+         <div class="blog-wraper">
+            <div class="blog">
+               <div class="blog-top">
+                  <span class="material-icons chair">chair</span>
+               </div>
+               <div class="blog-info">
+                  <span class="data">Bookings</span>
+                  <span class="numbers">184</span>
+               </div>
+            </div>
+            <div class="separator"></div>
+            <div class="blog-space">
+               <span class="material-icons"> warning</span>Get more space!
+            </div>
+         </div>
+         <div class="blog-wraper">
+            <div class="blog">
+               <div class="blog-top">
+                  <span class="material-icons bar_chart">bar_chart</span>
+               </div>
+               <div class="blog-info">
+                  <span class="data">Website visits</span>
+                  <span class="numbers">75.521</span>
+               </div>
+            </div>
+            <div class="separator"></div>
+            <div class="blog-space">
+               <span class="material-icons">sell</span>Tracked from Google Analistycs!
+            </div>
+         </div>
+         <div class="blog-wraper">
+            <div class="blog">
+               <div class="blog-top">
+                  <span class="material-icons store">store</span>
+               </div>
+               <div class="blog-info">
+                  <span class="data">Revenue</span>
+                  <span class="numbers">$34.245</span>
+               </div>
+            </div>
+            <div class="separator"></div>
+            <div class="blog-space">
+               <span class="material-icons"> date_range</span>Last 24 hours
+            </div>
+         </div>
+         <div class="blog-wraper">
+            <div class="blog">
+               <div class="blog-top">
+                  <span class="material-icons public">public</span>
+               </div>
+               <div class="blog-info">
+                  <span class="data">Followers</span>
+                  <span class="numbers">+245</span>
+               </div>
+            </div>
+            <div class="separator"></div>
+            <div class="blog-space">
+               <span class="material-icons"> update</span>Just Updated
+            </div>
+         </div>
+      </div>
+      <span class="listing">
+         <p>Manage Listing</p>
+      </span>
+      <div class="cards">
+         <div id="editModal" class="modal">
+            <div class="modal-content">
+               <span class="close">&times;</span>
+               <label for="newName">New Name:</label>
+               <input type="text" id="newName" name="newName">
+               <button id="saveChanges">Save Changes</button>
+            </div>
+         </div>
+
+      </div>
+
+      <footer>
+         <div class="info">
+            <span>Home</span> <span>Company</span> <span>Protofolio</span>
+            <span>Blog</span>
+         </div>
+         <div class="rights">
+            <span>© John Doe 2023</span>
+         </div>
+      </footer>
+   </div>
+   <script src="js/index.js" type="module"></script>
+
+</body>
+
+</html>
