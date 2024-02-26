@@ -1,28 +1,32 @@
+
 let sidebarControl = document.getElementById('sidebar-control');
 let sidebar = document.getElementById('sidebar');
 
 sidebarControl.addEventListener('click', () => {
     sidebar.classList.toggle('collapsed');
+    
 
     if (sidebar.classList.contains('collapsed')) {
         sidebarControl.innerHTML = 'menu';
     } else {
         sidebarControl.innerHTML = 'more_vert';
     }
+   
 });
 
-let dropDown = document.querySelectorAll('.aside-item');
+let dropDown = document.querySelectorAll('.aside-item, .author-info');
 
-dropDown.forEach(function (icon) {
-    icon.addEventListener('click', function () {
-        let parentItem = icon.closest('.aside-item');
+dropDown.forEach(function (element) {
+    element.addEventListener('click', function () {
+        let parentItem = element.closest('.aside-item');
+        if (!parentItem) {
+            parentItem = element;
+        }
         let dropdown = parentItem.querySelector('.side-dropdown ul');
 
         if (dropdown) {
-
             let isOpen = parentItem.classList.contains('active');
-
-            document.querySelectorAll('.aside-item').forEach(function (item) {
+            document.querySelectorAll('.aside-item, .author-info').forEach(function (item) {
                 item.classList.remove('active');
                 item.style.marginBottom = '0';
             });
@@ -35,8 +39,9 @@ dropDown.forEach(function (icon) {
         }
     });
 });
+
 document.addEventListener('DOMContentLoaded', function () {
-    let asideItems = document.querySelectorAll('.aside-item');
+    let asideItems = document.querySelectorAll('.aside-item, .author-info');
 
     asideItems.forEach(function (item) {
         let hasDropdown = item.querySelector('.side-dropdown');
@@ -47,5 +52,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
 

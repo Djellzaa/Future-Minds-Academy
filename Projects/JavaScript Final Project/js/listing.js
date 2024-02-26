@@ -1,49 +1,55 @@
 
 document.addEventListener('DOMContentLoaded', function () {
-    let listings = JSON.parse(localStorage.getItem('listings')) || [
-        {
-            id: 1,
-            name: "Beautiful Castle",
-            description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Vivamus id rutrum mauris. Praesent hendrerit accumsan viverra.
-            Vivamus id rutrum mauris. Praesent hendrerit accumsan viverra.`,
-            price: 899,
-            currency: '$',
-            location: {
-                city: 'Barcelona',
-                country: 'Spain'
+    let isPageReloaded = false; 
+
+    let listings = JSON.parse(localStorage.getItem('listings')) || getDefaultListings();
+
+    function getDefaultListings() {
+        return [
+            {
+                id: 1,
+                name: "Beautiful Castle",
+                description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vivamus id rutrum mauris. Praesent hendrerit accumsan viverra.
+                Vivamus id rutrum mauris. Praesent hendrerit accumsan viverra.`,
+                price: 899,
+                currency: '$',
+                location: {
+                    city: 'Barcelona',
+                    country: 'Spain'
+                },
+                image: 'images/card-1.jpeg'
             },
-            image: 'images/card-1.jpeg'
-        },
-        {
-            id: 2,
-            name: "Office Studio",
-            description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Vivamus id rutrum mauris. Praesent hendrerit accumsan viverra.
-            Vivamus id rutrum mauris. Praesent hendrerit accumsan viverra.`,
-            price: 1119,
-            currency: '$',
-            location: {
-                city: 'London',
-                country: 'UK'
+            {
+                id: 2,
+                name: "Office Studio",
+                description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vivamus id rutrum mauris. Praesent hendrerit accumsan viverra.
+                Vivamus id rutrum mauris. Praesent hendrerit accumsan viverra.`,
+                price: 1119,
+                currency: '$',
+                location: {
+                    city: 'London',
+                    country: 'UK'
+                },
+                image: 'images/card-2.jpeg'
             },
-            image: 'images/card-2.jpeg'
-        },
-        {
-            id: 3,
-            name: "Cozy 5 Stars Apartment",
-            description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Vivamus id rutrum mauris. Praesent hendrerit accumsan viverra.
-            Vivamus id rutrum mauris. Praesent hendrerit accumsan viverra.`,
-            price: 459,
-            currency: '$',
-            location: {
-                city: 'Rome',
-                country: 'Italy'
+            {
+                id: 3,
+                name: "Cozy 5 Stars Apartment",
+                description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vivamus id rutrum mauris. Praesent hendrerit accumsan viverra.
+                Vivamus id rutrum mauris. Praesent hendrerit accumsan viverra.`,
+                price: 459,
+                currency: '$',
+                location: {
+                    city: 'Rome',
+                    country: 'Italy'
+                },
+                image: 'images/card-3.jpeg'
             },
-            image: 'images/card-3.jpeg'
-        },
-    ];
+        ];
+    }
 
     function saveListingsToLocalStorage() {
         localStorage.setItem('listings', JSON.stringify(listings));
@@ -52,6 +58,11 @@ document.addEventListener('DOMContentLoaded', function () {
     function renderListings() {
         let cardsContainer = document.querySelector('.cards');
         cardsContainer.innerHTML = '';
+
+        if (!isPageReloaded && listings.length === 0) {
+            listings = getDefaultListings();
+            saveListingsToLocalStorage();
+        }
 
         listings.forEach(listing => {
             let cardWrapper = document.createElement('div');
@@ -89,14 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
-            // let deleteButton = createIconButton('close', 'Delete', function () {
-            //     let confirmDelete = confirm;
-            //     if (confirmDelete) {
-            //         listings = listings.filter(item => item.id !== listing.id);
-            //         renderListings();
-            //         saveListingsToLocalStorage();
-            //     }
-            // });
             let deleteButton = createIconButton('close', 'Delete', function (event) {
                 let cardWrapper = event.target.closest('.card-wraper');
                 let id = parseInt(cardWrapper.dataset.id);
@@ -113,7 +116,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     }, 500); 
                 }
             });
-
 
             cardIcons.appendChild(viewButton);
             cardIcons.appendChild(editButton);
@@ -148,6 +150,8 @@ document.addEventListener('DOMContentLoaded', function () {
             cardWrapper.appendChild(card);
             cardsContainer.appendChild(cardWrapper);
         });
+
+        isPageReloaded = true;
     }
 
     function createEditableElement(tagName, className, textContent) {
