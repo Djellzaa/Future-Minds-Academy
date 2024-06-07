@@ -1,7 +1,13 @@
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+
 
 export default function Nav(){
+    const navigate = useNavigate();
+    function navigateHandler(){
+        navigate('/allseason')
+    }
+
     return (
         <>
             <header class="row align-center">
@@ -38,7 +44,7 @@ export default function Nav(){
                                 }
                                 >Winter</NavLink>
                             </li>
-                            <li><button class="btn">All Seasons</button></li>
+                            <li><button onClick={navigateHandler} class="btn">All Seasons</button></li>
                         </ul>
                     </nav>
                 </div>

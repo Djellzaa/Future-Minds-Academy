@@ -6,13 +6,21 @@ import Summer from './pages/Summer';
 import Spring from './pages/Spring';
 import Fall from './pages/Fall';
 import Winter from './pages/Winter';
+import Allseason from './pages/Allseason';
 
-const router = createBrowserRouter([
-  { path: '/', element: <Spring /> },
-  { path: '/summer', element: <Summer /> },
-  { path: '/fall', element: <Fall /> },
-  { path: '/winter', element: <Winter /> },
-
+const router = createBrowserRouter([{
+  path:'/',
+  element:<RootLayout/>,
+  errorElement : <Error/>,
+  children: [
+    { path: '/', element: <Spring /> },
+    { path: '/summer', element: <Summer /> },
+    { path: '/fall', element: <Fall /> },
+    { path: '/winter', element: <Winter /> },
+    { path: '/allseason', element: <Allseason /> },
+  
+  ]
+}
 
 ]);
 
